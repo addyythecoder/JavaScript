@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q4.Gross Salary Calculator</title>
+</head>
+<body>
+
+  <h3>Enter Base Salary:</h3>
+  <input type="number" id="baseSalary">
+  <button onclick="calculateGrossSalary()">Calculate Gross Salary</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateGrossSalary() {
+      var base = document.getElementById("baseSalary").value; 
+
+      // Convert to number
+      base = parseFloat(base);
+
+      // Calculate allowances
+      var hra = base * 0.10;
+      var da  = base * 0.05;
+      var ta  = base * 0.08;
+
+      // Calculate gross salary
+      var gross = base + hra + da + ta;
+
+      // Display all values
+      document.getElementById("result").innerHTML =
+        "Base Salary: " + base + " Rs<br>" +
+        "HRA (10%): " + hra + " Rs<br>" +
+        "DA (5%): " + da + " Rs<br>" +
+        "TA (8%): " + ta + " Rs<br>" +
+        "<strong>Gross Salary: " + gross + " RS</strong>";
+    }
+  </script>
+
+</body>
+</html>

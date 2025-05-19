@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q2.Swap Two Variables</title>
+</head>
+<body>
+
+  <h2>Swapped Values using <code>getElementById</code>:</h2>
+  <div id="output"></div>
+
+  <script>
+    let a = prompt("Enter the value of variable A:");
+    let b = prompt("Enter the value of variable B:");
+
+    // Swap logic
+    let temp = a;
+    a = b;
+    b = temp;
+
+    document.getElementById("output").innerHTML =
+      "A = " + a + "<br>B = " + b;
+  </script>
+
+</body>
+</html>
