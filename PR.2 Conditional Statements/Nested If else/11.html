@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.Largest among three numbers</title>
+</head>
+<body>
+    <script>
+        let num1 = parseFloat(prompt("Enter the first number:"));
+        let num2 = parseFloat(prompt("Enter the second number:"));
+        let num3 = parseFloat(prompt("Enter the third number:"));
+
+        if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+            document.writeln("Please enter valid numbers.");
+        } else {
+            if (num1 >= num2 && num1 >= num3) {
+                document.writeln("The largest number is: " + num1);
+            } else if (num2 >= num1 && num2 >= num3) {
+                document.writeln("The largest number is: " + num2);
+            } else {
+                document.writeln("The largest number is: " + num3);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>38.traffic signal meaning switch case</title>
+</head>
+<body>
+    <script>
+        let signal = prompt("Enter the traffic signal color (red, yellow, green):").toLowerCase();
+
+        switch (signal) {
+            case 'red':
+                document.writeln("Stop! The signal is red.");
+                break;
+            case 'yellow':
+                document.writeln("Caution! The signal is yellow.");
+                break;
+            case 'green':
+                document.writeln("Go! The signal is green.");
+                break;
+            default:
+                document.writeln("Invalid signal color. Please enter red, yellow, or green.");
+        }
+    </script>
+</body>
+</html>

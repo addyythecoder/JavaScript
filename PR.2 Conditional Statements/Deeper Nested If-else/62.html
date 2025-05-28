@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate form input: if email, password, and username are all filled.Deeper nested if else</title>
+</head>
+<body>
+    <script>
+        let email = prompt("Enter your email:");
+        let password = prompt("Enter your password:");
+        let username = prompt("Enter your username:");
+
+        if (email && password && username) {
+            if (email.includes("@") && email.includes(".")) {
+                if (password.length >= 8) {
+                    if (username.length >= 3) {
+                        document.writeln("Form submitted successfully!");
+                    } else {
+                        document.writeln("Username must be at least 3 characters long.");
+                    }
+                } else {
+                    document.writeln("Password must be at least 8 characters long.");
+                }
+            } else {
+                document.writeln("Please enter a valid email address.");
+            }
+        } else {
+            document.writeln("All fields are required.");
+        }
+    </script>
+</body>
+</html>

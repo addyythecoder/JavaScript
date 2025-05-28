@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.Single-digit check.</title>
+</head>
+<body>
+    <script>
+        let number = parseInt(prompt("Enter a number:"));
+
+        if (isNaN(number)) {
+            document.writeln("Please enter a valid number.");
+        } else if (number >= 0 && number < 10) {
+            document.writeln("The number " + number + " is a single-digit number.");
+        } else {
+            document.writeln("The number " + number + " is not a single-digit number.");
+        }
+    </script>
+</body>
+</html>

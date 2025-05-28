@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.Divisible by 5</title>
+</head>
+<body>
+    <script>
+        let num = Number(prompt("Enter the number to check whether its divisible by 5 or not"));
+        // Check if the input is a valid number
+         if (isNaN(num)) {
+            document.writeln("Invalid input. Please enter a valid number.");
+        } else if (num % 5 == 0) {
+            document.writeln("The number is Divisible by 5");
+        } else {
+            document.writeln("The number is Not Divisible by 5");
+        }
+    </script>
+</body> 
+</html>

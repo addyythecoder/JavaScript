@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign "Minor" or "Adult" using ternary.</title>
+</head>
+<body>
+    <script>
+        let age = parseInt(prompt("Enter your age:"));
+
+        if (isNaN(age)) {
+            document.writeln("Please enter a valid number for age.");
+        } else {
+            let status = (age < 18) ? "Minor" : "Adult";
+            document.writeln("You are classified as: " + status);
+        }
+    </script>
+</body>
+</html>

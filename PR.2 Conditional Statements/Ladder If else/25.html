@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25.season based on the month</title>
+</head>
+<body>
+    <script>
+        let month = parseInt(prompt("Enter the month number (1-12):"));
+
+        if (isNaN(month) || month < 1 || month > 12) {
+            document.writeln("Please enter a valid month number between 1 and 12.");
+        } else if (month === 11 || month === 12 || month === 1 || month === 2) {
+            document.writeln("It's Winter season.");
+        } else if (month >= 3 && month <= 6) {
+            document.writeln("It's Summer season.");
+        } else if (month >= 7 && month <= 10) {
+            document.writeln("It's Monsoon season.");
+        } 
+    </script>
+</body>
+</html>
