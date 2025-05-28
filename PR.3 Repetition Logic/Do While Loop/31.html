@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Check if a number is a prime using a do-while loop.</title>
+</head>
+<body>
+    <script>
+        let num = 29; // Number to check
+        let isPrime = true; // Assume it's prime until proven otherwise
+        let i = 2;
+
+        do {
+            if (num % i === 0) {
+                isPrime = false;
+                break;
+            }
+            i++;
+        } while (i <= Math.sqrt(num));
+
+        if (isPrime) {
+            console.log(num + " is a prime number.");
+        } else {
+            console.log(num + " is not a prime number.");
+        }
+    </script>
+</body>
+</html>
