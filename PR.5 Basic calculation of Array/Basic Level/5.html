@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove duplicates from an array.</title>
+</head>
+<body>
+    <script>
+        function removeDuplicates(arr) {
+            return [...new Set(arr)];
+        }
+
+        const originalArray = [1, 2, 3, 4, 5, 1, 2, 3];
+        const uniqueArray = removeDuplicates(originalArray);
+
+        console.log("Original Array:", originalArray);
+        console.log("Array after removing duplicates:", uniqueArray);
+    </script>
+</body>
+</html>

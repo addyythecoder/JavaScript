@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group array elements by data type.</title>
+</head>
+<body>
+    <script>
+        function groupByDataType(arr) {
+            return arr.reduce((acc, item) => {
+                const type = typeof item;
+                if (!acc[type]) {
+                    acc[type] = [];
+                }
+                acc[type].push(item);
+                return acc;
+            }, {});
+        }
+
+        const mixedArray = [1, 'hello', true, 42, 'world', false, null, undefined, { key: 'value' }, [1, 2, 3]];
+
+        const groupedArray = groupByDataType(mixedArray);
+
+        console.log("Original Array:", mixedArray);
+        console.log("Grouped by Data Type:", groupedArray);
+    </script>
+</body>
+</html>

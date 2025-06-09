@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zip two arrays (e.g., [a,b], [1,2] → [[a,1],[b,2]])</title>
+</head>
+<body>
+    <script>
+        function zipArrays(arr1, arr2) {
+            const length = Math.min(arr1.length, arr2.length);
+            const zippedArray = [];
+
+            for (let i = 0; i < length; i++) {
+                zippedArray.push([arr1[i], arr2[i]]);
+            }
+
+            return zippedArray;
+        }
+
+        const array1 = ['a', 'b'];
+        const array2 = [1, 2];
+
+        const result = zipArrays(array1, array2);
+
+        console.log("Zipped Array:", result);
+    </script>
+</body>
+</html>
