@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Array of Objects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    button, select, input {
+      margin: 5px;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Array of Objects</h2>
+
+  <!-- Controls -->
+  <div>
+    <label>Filter by Subject:</label>
+    <select id="subjectFilter">
+      <option value="">--Select--</option>
+      <option value="Math">Math</option>
+      <option value="English">English</option>
+      <option value="Science">Science</option>
+      <option value="History">History</option>
+    </select>
+    <button onclick="filterBySubject()">Apply</button>
+
+    <button onclick="sortByName()">Sort by Name</button>
+    <button onclick="listNamesAndGrades()">Names & Grades</button>
+    <button onclick="showAverageAge()">Average Age</button>
+    <button onclick="filterOlderThan18()">Age > 18</button>
+    <button onclick="gradeA_Math()">Grade A + Math</button>
+    <button onclick="sortByAge()">Sort by Age</button>
+  </div>
+
+  <!-- Search -->
+  <div style="margin-top: 10px;">
+    <input type="text" id="nameSearch" placeholder="Search by name">
+    <button onclick="searchByName()">Search</button>
+  </div>
+
+  <!-- Output Table -->
+  <table id="studentTable">
+    <thead>
+      <tr>
+        <th>ID</th><th>Name</th><th>Age</th><th>Grade</th><th>Subject</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- Optional output -->
+  <div id="output" style="margin-top:10px; font-weight: bold;"></div>
+
+  <script>
+    const students = [
+      { id: 1, name: "Alice", age: 17, grade: "A", subject: "Math" },
+      { id: 2, name: "Bob", age: 18, grade: "B", subject: "English" },
+      { id: 3, name: "Charlie", age: 17, grade: "C", subject: "Science" },
+      { id: 4, name: "David", age: 19, grade: "A", subject: "History" },
+      { id: 5, name: "Eva", age: 18, grade: "B", subject: "Math" },
+      { id: 6, name: "Frank", age: 17, grade: "C", subject: "English" },
+      { id: 7, name: "Grace", age: 18, grade: "A", subject: "Science" },
+      { id: 8, name: "Hannah", age: 19, grade: "B", subject: "History" },
+      { id: 9, name: "Ian", age: 17, grade: "C", subject: "Math" },
+      { id: 10, name: "Jack", age: 18, grade: "A", subject: "English" },
+      { id: 11, name: "Karen", age: 19, grade: "B", subject: "Science" },
+      { id: 12, name: "Leo", age: 17, grade: "C", subject: "History" },
+      { id: 13, name: "Mia", age: 18, grade: "A", subject: "Math" },
+      { id: 14, name: "Nina", age: 19, grade: "B", subject: "English" },
+      { id: 15, name: "Oscar", age: 17, grade: "C", subject: "Science" },
+      { id: 16, name: "Pam", age: 18, grade: "A", subject: "History" },
+      { id: 17, name: "Quinn", age: 19, grade: "B", subject: "Math" },
+      { id: 18, name: "Rick", age: 17, grade: "C", subject: "English" },
+      { id: 19, name: "Sara", age: 18, grade: "A", subject: "Science" },
+      { id: 20, name: "Tom", age: 19, grade: "B", subject: "History" }
+    ];
+
+    let ageSortAsc = true;
+
+    function displayTable(data = students) {
+      const tbody = document.querySelector("#studentTable tbody");
+      tbody.innerHTML = "";
+      data.forEach(s => {
+        const row = `<tr>
+          <td>${s.id}</td>
+          <td>${s.name}</td>
+          <td>${s.age}</td>
+          <td>${s.grade}</td>
+          <td>${s.subject}</td>
+        </tr>`;
+        tbody.innerHTML += row;
+      });
+    }
+
+    function filterBySubject() {
+      const subject = document.getElementById("subjectFilter").value;
+      const filtered = students.filter(s => s.subject === subject);
+      displayTable(filtered);
+    }
+
+    function sortByName() {
+      const sorted = [...students].sort((a, b) => a.name.localeCompare(b.name));
+      displayTable(sorted);
+    }
+
+    function listNamesAndGrades() {
+      const output = students.map(s => `${s.name} - Grade: ${s.grade}`).join("<br>");
+      document.getElementById("output").innerHTML = output;
+    }
+
+    function showAverageAge() {
+      const avg = students.reduce((sum, s) => sum + s.age, 0) / students.length;
+      document.getElementById("output").innerText = "Average Age: " + avg.toFixed(2);
+    }
+
+    function filterOlderThan18() {
+      const older = students.filter(s => s.age > 18);
+      displayTable(older);
+    }
+
+    function gradeA_Math() {
+      const filtered = students.filter(s => s.grade === "A" && s.subject === "Math");
+      displayTable(filtered);
+    }
+
+    function sortByAge() {
+      const sorted = [...students].sort((a, b) => ageSortAsc ? a.age - b.age : b.age - a.age);
+      ageSortAsc = !ageSortAsc;
+      displayTable(sorted);
+    }
+
+    function searchByName() {
+      const name = document.getElementById("nameSearch").value.toLowerCase();
+      const found = students.find(s => s.name.toLowerCase() === name);
+      if (found) {
+        displayTable([found]);
+        document.getElementById("output").innerText = "Student found!";
+      } else {
+        displayTable([]);
+        document.getElementById("output").innerText = "No student found.";
+      }
+    }
+
+    // Initial display
+    displayTable();
+  </script>
+
+</body>
+</html>
