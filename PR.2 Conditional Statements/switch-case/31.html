@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31.arithmetic operations</title>
+</head>
+<body>
+    <script>
+        let num1 = parseFloat(prompt("Enter the first number:"));
+        let num2 = parseFloat(prompt("Enter the second number:"));
+        let operator = prompt("Enter an operator (+, -, *, /):");
+
+        if (isNaN(num1) || isNaN(num2)) {
+            document.writeln("Please enter valid numbers.");
+        } else {
+            switch (operator) {
+                case '+':
+                    document.writeln(`Result: ${num1 + num2}`);
+                    break;
+                case '-':
+                    document.writeln(`Result: ${num1 - num2}`);
+                    break;
+                case '*':
+                    document.writeln(`Result: ${num1 * num2}`);
+                    break;
+                case '/':
+                    if (num2 !== 0) {
+                        document.writeln(`Result: ${num1 / num2}`);
+                    } else {
+                        document.writeln("Cannot divide by zero.");
+                    }
+                    break;
+                default:
+                    document.writeln("Invalid operator. Please use +, -, *, or /.");
+            }
+        }
+    </script>
+</body>
+</html>

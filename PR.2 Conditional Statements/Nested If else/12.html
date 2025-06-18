@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.Triangle</title>
+</head>
+<body>
+    <script>
+        let angle1 = parseFloat(prompt("Enter the first angle of the triangle:"));
+        let angle2 = parseFloat(prompt("Enter the second angle of the triangle:"));
+        let angle3 = parseFloat(prompt("Enter the third angle of the triangle:"));
+
+        if (isNaN(angle1) || isNaN(angle2) || isNaN(angle3)) {
+            document.writeln("Please enter valid numbers for angles.");
+        } else if (angle1 + angle2 + angle3 === 180) {
+            document.writeln("The angles form a valid triangle.");
+        } else {
+            document.writeln("The angles do not form a valid triangle.");
+        }
+    </script>
+</body>
+</html>

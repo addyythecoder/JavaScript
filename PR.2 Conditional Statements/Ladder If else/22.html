@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22.BMI Category</title>
+</head>
+<body>
+    <script>
+        let weight = parseFloat(prompt("Enter your weight in kg:"));
+        let height = parseFloat(prompt("Enter your height in meters:"));
+
+        if (isNaN(weight) || isNaN(height) || height <= 0) {
+            document.writeln("Please enter valid numbers for weight and height.");
+        } else {
+            let bmi = weight / (height * height);
+            document.writeln(`Your BMI is ${bmi.toFixed(2)}.<br>`);
+
+            if (bmi < 18.5) {
+                document.writeln("You are underweight.");
+            } else if (bmi >= 18.5 && bmi < 24.9) {
+                document.writeln("You have a normal weight.");
+            } else if (bmi >= 25 && bmi < 29.9) {
+                document.writeln("You are overweight.");
+            } else {
+                document.writeln("You are obese.");
+            }
+        }
+    </script>
+</body>
+</html>

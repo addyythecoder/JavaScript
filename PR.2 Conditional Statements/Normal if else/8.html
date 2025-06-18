@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.password match</title>
+</head>
+<body>
+    <script>
+        let storedPassword = "@Damnflame77"; // The password stored in the system
+        let enteredPassword = prompt("Please enter your password:");
+
+        if (enteredPassword === storedPassword) {
+            document.writeln("Access granted. Welcome!");
+        } else {
+            document.writeln("Access denied. Incorrect password.");
+        }
+    </script>
+</body>
+</html>

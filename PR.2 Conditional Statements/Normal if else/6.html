@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.Eligible to vote</title>
+</head>
+<body>
+    <script>
+        let age = parseInt(prompt("Enter your age:"));
+        if (isNaN(age)) {
+            document.writeln("Please enter a valid number for age.");
+        } else if (age >= 18) {
+            document.writeln("You are eligible to vote.");
+        } else {
+            document.writeln("You are not eligible to vote.");
+        }
+    </script>
+</body>
+</html>

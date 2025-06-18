@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.Temperature check</title>
+</head>
+<body>
+    <script>
+        let temperature = parseFloat(prompt("Enter the temperature in Celsius:"));
+        if (isNaN(temperature)) {
+            document.writeln("Please enter a valid number for temperature.");
+        } else if (temperature >= 36 && temperature <= 37.5) {   
+            document.writeln("The temperature is normal.");
+        } else {
+            document.writeln("The temperature is not normal.(It is not between .)");
+        }
+    </script>
+</body>
+</html>

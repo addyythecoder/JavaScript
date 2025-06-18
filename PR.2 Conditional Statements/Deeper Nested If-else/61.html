@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>61.Determine admission eligibility</title>
+</head>
+<body>
+    <script>
+        let grades = parseFloat(prompt("Enter your average grades (0-100):"));
+        let testScore = parseFloat(prompt("Enter your test score (0-100):"));
+        let interviewScore = parseFloat(prompt("Enter your interview score (0-100):"));
+
+        if (grades >= 75) {
+            if (testScore >= 70) {
+                if (interviewScore >= 60) {
+                    document.writeln("Congratulations! You are eligible for admission.");
+                } else {
+                    document.writeln("You need a higher interview score to be eligible for admission.");
+                }
+            } else {
+                document.writeln("You need a higher test score to be eligible for admission.");
+            }
+        } else {
+            document.writeln("You need higher grades to be eligible for admission.");
+        }
+    </script>
+</body>
+</html>

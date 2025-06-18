@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.Positive or Negative</title>
+</head>
+<body>
+    <script>
+        let num = Number(prompt("Enter the number to check whether its positive or negative"));
+        if (isNaN(num)) {
+        document.writeln("Invalid input. Please enter a valid number.");
+        } else if (num > 0) {
+            document.writeln("The number is Positive");
+        } else if (num === 0) {
+            document.writeln("The number is Neutral");
+        } else {
+            document.writeln("The number is Negative");
+        }
+    </script>
+</body> 
+</html>

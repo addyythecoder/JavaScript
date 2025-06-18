@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13.Eligibility for Driving License</title>
+</head>
+<body>
+    <script>
+        let age = parseInt(prompt("Enter your age:"));
+        let medicaltest = prompt("Have you passed the medical test? (yes/no)");
+
+        if (isNaN(age)) {
+            document.writeln("Please enter a valid number for age.");
+        } else if (age >= 18 && medicaltest.toLowerCase() === "yes") {
+            document.writeln("You are eligible for a driving license.");
+        } else {
+            document.writeln("You are not eligible for a driving license.");
+        }
+    </script>
+</body>
+</html>

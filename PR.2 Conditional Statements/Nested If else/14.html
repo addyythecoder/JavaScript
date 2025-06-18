@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determine income tax based on salary slabs.</title>
+</head>
+<body>
+    <script>
+        let salary = parseFloat(prompt("Enter your annual salary:"));
+
+        if (isNaN(salary) || salary < 0) {
+            document.writeln("Please enter a valid positive number for salary.");
+        } else if (salary <= 250000) {
+            document.writeln("No income tax is applicable for an annual salary of " + salary + ".");
+        } else if (salary <= 500000) {
+            let tax = (salary - 250000) * 0.05;
+            document.writeln("Income tax for an annual salary of " + salary + " is: " + tax);
+        } else if (salary <= 1000000) {
+            let tax = (250000 * 0.05) + ((salary - 500000) * 0.1);
+            document.writeln("Income tax for an annual salary of " + salary + " is: " + tax);
+        } else {
+            let tax = (250000 * 0.05) + (500000 * 0.1) + ((salary - 1000000) * 0.15);
+            document.writeln("Income tax for an annual salary of " + salary + " is: " + tax);
+        }
+    </script>
+</body>
+</html>
