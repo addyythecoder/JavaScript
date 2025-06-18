@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q1.JavaScript Arithmetic Operations</title>
+</head>
+<body>
+
+  <h2>Results using <code>getElementById</code>:</h2>
+  <div id="output"></div>
+
+  <script type="text/JavaScript">
+    let num1 = parseFloat(prompt("Enter the first number:"));
+    let num2 = parseFloat(prompt("Enter the second number:"));
+
+    document.getElementById("output").innerHTML =
+      `Addition :- ${num1 + num2} <br>` +
+      `subtraction :- ${num1 - num2} <br>` +
+      `multiplication :- ${num1 * num2} <br>` +
+      `division :- ${num1 / num2} <br>`;
+
+  </script>
+
+</body>
+</html>

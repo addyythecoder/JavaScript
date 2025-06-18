@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q7.Rate of Interest Calculator</title>
+</head>
+<body>
+
+  <h3>Enter Principal, Rate (%), and Time (years):</h3>
+
+  Principal (P): <input type="number" id="principal"><br><br>
+  Rate (R): <input type="number" id="rate"><br><br>
+  Time (N): <input type="number" id="time"><br><br>
+
+  <button onclick="calculateInterest()">Calculate Interest</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateInterest() {
+      // Get user inputs
+      var p = document.getElementById("principal").value;
+      var r = document.getElementById("rate").value;
+      var n = document.getElementById("time").value;
+
+      // Convert to numbers
+      p = parseFloat(p);
+      r = parseFloat(r);
+      n = parseFloat(n);
+
+      // Calculate interest
+      var interest = (p * r * n) / 100;
+
+      // Display result
+      document.getElementById("result").innerText = "Interest: " + interest + " RS";
+    }
+  </script>
+
+</body>
+</html>

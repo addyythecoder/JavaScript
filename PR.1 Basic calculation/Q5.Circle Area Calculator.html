@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q5.Circle Area Calculator</title>
+</head>
+<body>
+
+  <h3>Enter Radius of Circle:</h3>
+  <input type="number" id="radius">
+  <button onclick="calculateArea()">Calculate Area</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateArea() {
+      // Get radius from user input
+      var r = document.getElementById("radius").value;
+
+      // Convert to number
+      r = parseFloat(r);
+
+      // Calculate area using formula: 3.14 * r * r
+      var area = 3.14 * r * r;
+
+      // Display result
+      document.getElementById("result").innerText = "Area of Circle: " + area;
+    }
+  </script>
+
+</body>
+</html>
