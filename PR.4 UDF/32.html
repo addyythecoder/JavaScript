@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32. sum all numbers up to n.</title>
+</head>
+<body>
+    <script>
+        function sumUpToN(n) {
+            if (n <= 0) {
+                return 0;
+            } else {
+                return n + sumUpToN(n - 1);
+            }
+        }
+
+        let number = 5; 
+        let result = sumUpToN(number);
+
+        console.log("The sum of all numbers up to " + number + " is: " + result);
+    </script>
+    
+</body>
+</html>
