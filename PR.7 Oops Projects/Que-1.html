@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-1 </title>
+</head>
+<body>
+
+    <script>
+        class Person {
+            constructor(name, age, country) {
+                this.name = name;
+                this.age = age;
+                this.country = country;
+            }
+
+            getDetails() {
+                console.log(`Name :- ${this.name}`);
+                console.log(`Age :- ${this.age}`);
+                console.log(`Country :- ${this.country}`);
+            }
+        }
+
+        let person1 = new Person("Alice", 30, "USA");
+        person1.getDetails();
+        let person2 = new Person("Bob", 25, "Canada");
+        person2.getDetails();
+        
+        
+    </script>
+
+</body>
+</html>

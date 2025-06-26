@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bank Account</title>
+  </head>
+  <body>
+    <script>
+      class BankAccount {
+        constructor(accountNumber, balance) {
+          this.accountNumber = accountNumber;
+          this.balance = balance;
+        }
+
+        deposit(amount) {          
+            this.balance += amount;
+            document.write(`<br>Deposited:  ${amount}`);
+        }
+
+        withdraw(amount) {
+            this.balance -= amount;
+        }
+
+        display(message = "Account Balance") {
+          document.write(`<br> ${message} :  ${this.balance} `);
+        }
+      }
+
+      let accountNumber = 212121212;
+      let openingBalance = 1500;
+      let account = new BankAccount(accountNumber, openingBalance);
+
+      document.write(`A/c No.:  ${account.accountNumber}`);
+      document.write(`<br>Opening Balance:  ${account.balance}`);
+
+      let depositAmount = parseFloat(prompt("Enter amount to deposit:"));
+      account.deposit(depositAmount);
+
+      let withdrawAmount = parseFloat(prompt("Enter amount to withdraw:"));
+      account.withdraw(withdrawAmount);
+
+      account.display("Final Balance");
+    </script>
+  </body>
+</html>
