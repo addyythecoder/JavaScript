@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Counter App</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #eef2f5;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .container {
+      background: white;
+      display: inline-block;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 10px #aaa;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    #count {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div id="count">0</div>
+    <button class="btn" onclick="decrement()">Decrement</button>
+    <button class="btn" onclick="increment()">Increment</button>
+
+    <p>Clicks on Increment: <span id="incCount">0</span></p>
+    <p>Clicks on Decrement: <span id="decCount">0</span></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
