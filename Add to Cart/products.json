@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Bugatti",
+        "price": 1839,
+        "image": "img/1.png"
+    },
+    {
+        "id": 2,
+        "name": "Bike",
+        "price": 479,
+        "image": "img/2.png"
+    },
+    {
+        "id": 3,
+        "name": "Batmobile1",
+        "price": 2299,
+        "image": "img/3.png"
+    },
+    {
+        "id": 4,
+        "name": "Batmobile2",
+        "price": 2599,
+        "image": "img/4.png"
+    },
+    {
+        "id": 5,
+        "name": "Dodge",
+        "price": 1999,
+        "image": "img/5.png"
+    },
+    {
+        "id": 6,
+        "name": "Lambo",
+        "price": 799,
+        "image": "img/6.png"
+    },
+    {
+        "id": 7,
+        "name": "f1",
+        "price": 899,
+        "image": "img/7.png"
+    },
+    {
+        "id": 8,
+        "name": "Ghost Rider",
+        "price": 999,
+        "image": "img/8.png"
+    }
+]
