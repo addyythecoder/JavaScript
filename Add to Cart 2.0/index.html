@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Food Delight</title>
+    <link rel="stylesheet" href="Assets/style.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <i class="fas fa-utensils"></i>
+        <span>FOOD DELIGHT</span>
+      </div>
+      <div class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </div>
+    </header>
+
+    <!-- Page Title -->
+    <h2 class="page-title">Discover the Best Food</h2>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+      <!-- Food Card -->
+      <!-- Food Card: Plain -->
+      <div class="card">
+        <img src="Assets/img/97.jpg" alt="Plain" />
+        <div class="card-info">
+          <p class="name">Plain</p>
+          <p class="price">Rs.40</p>
+        </div>
+        <button class="add-cart"><i class="fas fa-cart-plus"></i></button>
+      </div>
+
+      <!-- Food Card: Paper Roast -->
+      <div class="card">
+        <img src="Assets/img/98.jpg" alt="Paper Roast" />
+        <div class="card-info">
+          <p class="name">Paper Roast</p>
+          <p class="price">Rs.65</p>
+        </div>
+        <button class="add-cart"><i class="fas fa-cart-plus"></i></button>
+      </div>
+
+      <!-- Food Card: Onion Roast -->
+      <div class="card">
+        <img src="Assets/img/99.jpg" alt="Onion Roast" />
+        <div class="card-info">
+          <p class="name">Onion Roast</p>
+          <p class="price">Rs.80</p>
+        </div>
+        <button class="add-cart"><i class="fas fa-cart-plus"></i></button>
+      </div>
+
+      <!-- Food Card: Egg Parotta -->
+      <div class="card">
+        <img src="Assets/img/100.jpg" alt="Egg Parotta" />
+        <div class="card-info">
+          <p class="name">Egg Parotta</p>
+          <p class="price">Rs.55</p>
+        </div>
+        <button class="add-cart"><i class="fas fa-cart-plus"></i></button>
+      </div>
+
+      <!-- Food Card: Plain Omelette -->
+      <div class="card">
+        <img src="Assets/img/101.jpg" alt="Plain Omelette" />
+        <div class="card-info">
+          <p class="name">Plain Omelette</p>
+          <p class="price">Rs.25</p>
+        </div>
+        <button class="add-cart"><i class="fas fa-cart-plus"></i></button>
+      </div>
+
+      <!-- Food Card: Kadai Fry -->
+      <div class="card">
+        <img src="Assets/img/102.jpg" alt="Kadai Fry" />
+        <div class="card-info">
+          <p class="name">Kadai Fry</p>
+          <p class="price">Rs.150</p>
+        </div>
+        <button class="add-cart"><i class="fas fa-cart-plus"></i></button>
+      </div>
+
+      <!-- Food Card: Egg Veechu -->
+      <div class="card">
+        <img src="Assets/img/103.jpg" alt="Egg Veechu" />
+        <div class="card-info">
+          <p class="name">Egg Veechu</p>
+          <p class="price">Rs.65</p>
+        </div>
+        <button class="add-cart"><i class="fas fa-cart-plus"></i></button>
+      </div>
+
+      <!-- Food Card: Egg Roast -->
+      <div class="card">
+        <img src="Assets/img/104.jpg" alt="Egg Roast" />
+        <div class="card-info">
+          <p class="name">Egg Roast</p>
+          <p class="price">Rs.65</p>
+        </div>
+        <button class="add-cart"><i class="fas fa-cart-plus"></i></button>
+      </div>
+
+      <!-- Copy this .card block to add more items later -->
+    </div>
+
+    <!-- Cart Panel -->
+    <div class="cart-panel" id="cart-panel">
+      <h3>Your Cart</h3>
+      <ul id="cart-items"></ul>
+      <button id="close-cart">Close</button>
+    </div>
+
+    <script src="Assets/script.js"></script>
+  </body>
+</html>
