@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Weather Report Table</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            padding: 40px 20px;
+            color: #fff;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 34px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        table {
+            width: 100%;
+            max-width: 960px;
+            margin: auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            color: #333;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        thead {
+            background-color: #1e3c72;
+            color: #ffffff;
+        }
+
+        th, td {
+            padding: 16px;
+            text-align: center;
+            font-size: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tbody tr:hover {
+            background-color: #e0f7fa;
+            transition: background-color 0.3s ease;
+        }
+
+        @media screen and (max-width: 600px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 15px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-radius: 10px;
+                background: #fff;
+            }
+
+            td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 15px;
+                width: 45%;
+                font-weight: bold;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h2>Weather Report Table</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>City</th>
+            <th>Temperature (°C)</th>
+            <th>Condition</th>
+            <th>Humidity (%)</th>
+            <th>Wind Speed (km/h)</th>
+        </tr>
+    </thead>
+    <tbody id="weatherTable">
+        <tr><td colspan="5">Loading data...</td></tr>
+    </tbody>
+</table>
+
+<script>
+    const apiKey = "cbab8da590816e1d5d019991f7d09628"; 
+    const cities = ["Delhi", "London", "Tokyo", "New York", "Paris"];
+    const weatherTable = document.getElementById("weatherTable");
+
+    async function fetchWeather(city) {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`Could not fetch for ${city}`);
+        return response.json();
+    }
+
+    async function loadWeatherData() {
+        weatherTable.innerHTML = ""; // clear loading row
+
+        for (const city of cities) {
+            try {
+                const data = await fetchWeather(city);
+                const row = `
+                    <tr>
+                        <td data-label="City">${data.name}</td>
+                        <td data-label="Temperature">${data.main.temp} °C</td>
+                        <td data-label="Condition">
+                            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" 
+                                 alt="${data.weather[0].description}" width="32" style="vertical-align: middle;">
+                            ${data.weather[0].main}
+                        </td>
+                        <td data-label="Humidity">${data.main.humidity}</td>
+                        <td data-label="Wind">${(data.wind.speed * 3.6).toFixed(1)} km/h</td>
+                    </tr>
+                `;
+                weatherTable.innerHTML += row;
+            } catch (error) {
+                console.error(error);
+                weatherTable.innerHTML += `<tr><td colspan="5">Failed to load data for ${city}</td></tr>`;
+            }
+        }
+    }
+
+    loadWeatherData();
+</script>
+
+</body>
+</html>
